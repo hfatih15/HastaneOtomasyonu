@@ -57,6 +57,7 @@
             this.doktorToolStripMenuItem.Name = "doktorToolStripMenuItem";
             this.doktorToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.doktorToolStripMenuItem.Text = "Doktor";
+            this.doktorToolStripMenuItem.Click += new System.EventHandler(this.doktorToolStripMenuItem_Click);
             // 
             // rndevuToolStripMenuItem
             // 
@@ -70,14 +71,16 @@
             // randevuAlToolStripMenuItem
             // 
             this.randevuAlToolStripMenuItem.Name = "randevuAlToolStripMenuItem";
-            this.randevuAlToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.randevuAlToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.randevuAlToolStripMenuItem.Text = "Randevu Al";
+            this.randevuAlToolStripMenuItem.Click += new System.EventHandler(this.randevuAlToolStripMenuItem_Click);
             // 
             // raporlarToolStripMenuItem
             // 
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
-            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
+            this.raporlarToolStripMenuItem.Click += new System.EventHandler(this.raporlarToolStripMenuItem_Click);
             // 
             // veriToolStripMenuItem
             // 
@@ -109,6 +112,7 @@
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -81,6 +81,9 @@
     <Compile Include="RandevuRaporForm.Designer.cs">
       <DependentUpon>RandevuRaporForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DoktorEkleForm.resx">
+      <DependentUpon>DoktorEkleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -93,6 +96,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RandevuForm.resx">
+      <DependentUpon>RandevuForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RandevuRaporForm.resx">
       <DependentUpon>RandevuRaporForm.cs</DependentUpon>
     </EmbeddedResource>
