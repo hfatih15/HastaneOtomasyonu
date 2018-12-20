@@ -28,75 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnKaydet = new System.Windows.Forms.Button();
+            this.lstHastalar = new System.Windows.Forms.ListBox();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.cmbServis = new System.Windows.Forms.ComboBox();
+            this.cmbDoktor = new System.Windows.Forms.ComboBox();
+            this.flpSaatler = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // button1
+            // btnKaydet
             // 
-            this.button1.Location = new System.Drawing.Point(530, 271);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnKaydet.Location = new System.Drawing.Point(622, 384);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(75, 23);
+            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lstHastalar
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(25, 134);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 84);
-            this.listBox1.TabIndex = 1;
+            this.lstHastalar.FormattingEnabled = true;
+            this.lstHastalar.ItemHeight = 16;
+            this.lstHastalar.Location = new System.Drawing.Point(12, 107);
+            this.lstHastalar.Name = "lstHastalar";
+            this.lstHastalar.Size = new System.Drawing.Size(223, 276);
+            this.lstHastalar.TabIndex = 1;
+            this.lstHastalar.SelectedIndexChanged += new System.EventHandler(this.lstHastalar_SelectedIndexChanged);
+            this.lstHastalar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstHastalar_KeyDown);
             // 
-            // textBox1
+            // txtAra
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 47);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtAra.Location = new System.Drawing.Point(41, 26);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(100, 22);
+            this.txtAra.TabIndex = 2;
+            this.txtAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAra_KeyUp);
             // 
-            // comboBox1
+            // cmbServis
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(409, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 3;
+            this.cmbServis.FormattingEnabled = true;
+            this.cmbServis.Location = new System.Drawing.Point(409, 14);
+            this.cmbServis.Name = "cmbServis";
+            this.cmbServis.Size = new System.Drawing.Size(121, 24);
+            this.cmbServis.TabIndex = 3;
+            this.cmbServis.SelectedIndexChanged += new System.EventHandler(this.cmbServis_SelectedIndexChanged);
             // 
-            // comboBox2
+            // cmbDoktor
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(213, 24);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 24);
-            this.comboBox2.TabIndex = 4;
+            this.cmbDoktor.FormattingEnabled = true;
+            this.cmbDoktor.Location = new System.Drawing.Point(213, 24);
+            this.cmbDoktor.Name = "cmbDoktor";
+            this.cmbDoktor.Size = new System.Drawing.Size(121, 24);
+            this.cmbDoktor.TabIndex = 4;
             // 
-            // flowLayoutPanel1
+            // flpSaatler
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(294, 118);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel1.TabIndex = 5;
+            this.flpSaatler.Location = new System.Drawing.Point(254, 54);
+            this.flpSaatler.Name = "flpSaatler";
+            this.flpSaatler.Size = new System.Drawing.Size(492, 313);
+            this.flpSaatler.TabIndex = 5;
             // 
             // RandevuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.flowLayoutPanel1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.flpSaatler);
+            this.Controls.Add(this.cmbDoktor);
+            this.Controls.Add(this.cmbServis);
+            this.Controls.Add(this.txtAra);
+            this.Controls.Add(this.lstHastalar);
+            this.Controls.Add(this.btnKaydet);
             this.Name = "RandevuForm";
             this.Text = "RandevuForm";
+            this.Load += new System.EventHandler(this.RandevuForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,11 +109,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.ListBox lstHastalar;
+        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.ComboBox cmbServis;
+        private System.Windows.Forms.ComboBox cmbDoktor;
+        private System.Windows.Forms.FlowLayoutPanel flpSaatler;
     }
 }

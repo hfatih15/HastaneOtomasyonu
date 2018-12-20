@@ -28,66 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.btnHemsireGuncelle = new System.Windows.Forms.Button();
+            this.cmbServis = new System.Windows.Forms.ComboBox();
+            this.txtAra = new System.Windows.Forms.TextBox();
+            this.lstDoktorlar = new System.Windows.Forms.ListBox();
+            this.chlstHemsire = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnHemsireGuncelle
             // 
-            this.button1.Location = new System.Drawing.Point(530, 311);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnHemsireGuncelle.Location = new System.Drawing.Point(514, 402);
+            this.btnHemsireGuncelle.Name = "btnHemsireGuncelle";
+            this.btnHemsireGuncelle.Size = new System.Drawing.Size(177, 23);
+            this.btnHemsireGuncelle.TabIndex = 0;
+            this.btnHemsireGuncelle.Text = "Hemsire Guncelle";
+            this.btnHemsireGuncelle.UseVisualStyleBackColor = true;
+            this.btnHemsireGuncelle.Click += new System.EventHandler(this.btnHemsireGuncelle_Click);
             // 
-            // comboBox1
+            // cmbServis
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(45, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 1;
+            this.cmbServis.FormattingEnabled = true;
+            this.cmbServis.Location = new System.Drawing.Point(45, 91);
+            this.cmbServis.Name = "cmbServis";
+            this.cmbServis.Size = new System.Drawing.Size(121, 24);
+            this.cmbServis.TabIndex = 1;
+            this.cmbServis.SelectedIndexChanged += new System.EventHandler(this.cmbServis_SelectedIndexChanged);
             // 
-            // textBox1
+            // txtAra
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 186);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
+            this.txtAra.Location = new System.Drawing.Point(66, 165);
+            this.txtAra.Name = "txtAra";
+            this.txtAra.Size = new System.Drawing.Size(100, 22);
+            this.txtAra.TabIndex = 2;
+            this.txtAra.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAra_KeyUp);
             // 
-            // listBox1
+            // lstDoktorlar
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(273, 119);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 84);
-            this.listBox1.TabIndex = 3;
+            this.lstDoktorlar.FormattingEnabled = true;
+            this.lstDoktorlar.ItemHeight = 16;
+            this.lstDoktorlar.Location = new System.Drawing.Point(273, 119);
+            this.lstDoktorlar.Name = "lstDoktorlar";
+            this.lstDoktorlar.Size = new System.Drawing.Size(191, 260);
+            this.lstDoktorlar.TabIndex = 3;
+            this.lstDoktorlar.SelectedIndexChanged += new System.EventHandler(this.lstDoktorlar_SelectedIndexChanged);
             // 
-            // checkedListBox1
+            // chlstHemsire
             // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(464, 119);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 89);
-            this.checkedListBox1.TabIndex = 5;
+            this.chlstHemsire.FormattingEnabled = true;
+            this.chlstHemsire.Location = new System.Drawing.Point(464, 119);
+            this.chlstHemsire.Name = "chlstHemsire";
+            this.chlstHemsire.Size = new System.Drawing.Size(227, 259);
+            this.chlstHemsire.TabIndex = 5;
             // 
             // DoktorEkleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.chlstHemsire);
+            this.Controls.Add(this.lstDoktorlar);
+            this.Controls.Add(this.txtAra);
+            this.Controls.Add(this.cmbServis);
+            this.Controls.Add(this.btnHemsireGuncelle);
             this.Name = "DoktorEkleForm";
             this.Text = "DoktorEkleForm";
+            this.Load += new System.EventHandler(this.DoktorEkleForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,10 +100,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button btnHemsireGuncelle;
+        private System.Windows.Forms.ComboBox cmbServis;
+        private System.Windows.Forms.TextBox txtAra;
+        private System.Windows.Forms.ListBox lstDoktorlar;
+        private System.Windows.Forms.CheckedListBox chlstHemsire;
     }
 }
