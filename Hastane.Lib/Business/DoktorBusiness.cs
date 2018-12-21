@@ -1,9 +1,5 @@
 ﻿using Hastane.Lib.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hastane.Lib.Business
 {
@@ -12,13 +8,9 @@ namespace Hastane.Lib.Business
         public void AtamaYap(Doktor nereye, Hemsire neyi)
         {
             if (neyi.AtandiMi)
-            {
-                throw new Exception("Atama yapılmıs önceden");
-            }
-            if (nereye.Servis!=neyi.Servis)
-            {
-                throw new Exception("aynı servis olmalı");
-            }
+                throw new Exception("Bu hemsire daha once baska bir doktora atamasi yapilmistir");
+            if (nereye.Servis != neyi.Servis)
+                throw new Exception("Doktor ve hemsire ayni serviste olmalidir");
             neyi.AtandiMi = true;
             nereye.Hemsireler.Add(neyi);
         }

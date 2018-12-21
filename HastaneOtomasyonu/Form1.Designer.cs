@@ -71,14 +71,14 @@
             // randevuAlToolStripMenuItem
             // 
             this.randevuAlToolStripMenuItem.Name = "randevuAlToolStripMenuItem";
-            this.randevuAlToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.randevuAlToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.randevuAlToolStripMenuItem.Text = "Randevu Al";
             this.randevuAlToolStripMenuItem.Click += new System.EventHandler(this.randevuAlToolStripMenuItem_Click);
             // 
             // raporlarToolStripMenuItem
             // 
             this.raporlarToolStripMenuItem.Name = "raporlarToolStripMenuItem";
-            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.raporlarToolStripMenuItem.Size = new System.Drawing.Size(159, 26);
             this.raporlarToolStripMenuItem.Text = "Raporlar";
             this.raporlarToolStripMenuItem.Click += new System.EventHandler(this.raporlarToolStripMenuItem_Click);
             // 
@@ -94,14 +94,16 @@
             // içeriAktarToolStripMenuItem
             // 
             this.içeriAktarToolStripMenuItem.Name = "içeriAktarToolStripMenuItem";
-            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.içeriAktarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.içeriAktarToolStripMenuItem.Text = "İçeri Aktar";
+            this.içeriAktarToolStripMenuItem.Click += new System.EventHandler(this.içeriAktarToolStripMenuItem_Click_1);
             // 
             // dışarıAktarToolStripMenuItem
             // 
             this.dışarıAktarToolStripMenuItem.Name = "dışarıAktarToolStripMenuItem";
-            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.dışarıAktarToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.dışarıAktarToolStripMenuItem.Text = "Dışarı Aktar";
+            this.dışarıAktarToolStripMenuItem.Click += new System.EventHandler(this.dışarıAktarToolStripMenuItem_Click_1);
             // 
             // Form1
             // 

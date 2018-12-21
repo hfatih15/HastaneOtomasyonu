@@ -5,10 +5,9 @@ using System.IO;
 
 namespace Hastane.Lib.Helpers
 {
-    public class DataHelpers
+    public static class DataHelper
     {
-        static string path = 
-            Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/HastaneData.json";
+        static string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/HastaneData.json";
         public static void Export(Context context)
         {
             try
@@ -21,7 +20,6 @@ namespace Hastane.Lib.Helpers
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
@@ -34,15 +32,13 @@ namespace Hastane.Lib.Helpers
                 var content = reader.ReadToEnd();
                 reader.Close();
                 reader.Dispose();
-                Context context =JsonConvert.DeserializeObject<Context>(content);
+                Context context = JsonConvert.DeserializeObject<Context>(content);
                 return context;
             }
             catch (Exception ex)
             {
-
                 throw ex;
             }
         }
-
     }
 }

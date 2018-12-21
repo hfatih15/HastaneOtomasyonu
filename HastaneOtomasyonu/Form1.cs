@@ -1,6 +1,14 @@
-﻿using Hastane.Lib.Data;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hastane.Lib.Data;
+using Hastane.Lib.Helpers;
 
 namespace HastaneOtomasyonu
 {
@@ -10,38 +18,36 @@ namespace HastaneOtomasyonu
         {
             InitializeComponent();
         }
+
         private DoktorEkleForm frmDoktor;
         private RandevuForm frmRandevu;
         private RandevuRaporForm frmRandevuRaporForm;
-        public static Context context { get; set; }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            context = new MockData().context;
-        }
-
         private void doktorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (frmDoktor==null || frmDoktor.IsDisposed)
+            if (frmDoktor == null || frmDoktor.IsDisposed)
             {
-                frmDoktor = new DoktorEkleForm {
-                    Text = "Doktor Formu",
-                    MdiParent=this
-
+                frmDoktor = new DoktorEkleForm
+                {
+                    Text = "Doktor formu",
+                    MdiParent = this
                 };
                 frmDoktor.Show();
             }
+        }
+        public static Context Context { get; set; }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Context = new MockData().Context;
         }
 
         private void randevuAlToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (frmRandevu == null || frmRandevu.IsDisposed)
             {
-                frmRandevu = new RandevuForm
+                frmRandevu = new RandevuForm()
                 {
-                    Text = "Randevu Formu",
+                    Text = "Randevu formu",
                     MdiParent = this
-
                 };
                 frmRandevu.Show();
             }
@@ -51,14 +57,30 @@ namespace HastaneOtomasyonu
         {
             if (frmRandevuRaporForm == null || frmRandevuRaporForm.IsDisposed)
             {
-                frmRandevuRaporForm = new RandevuRaporForm
+                frmRandevuRaporForm = new RandevuRaporForm()
                 {
-                    Text = "Randevu rapor Formu",
+                    Text = "Randevu Raporları",
                     MdiParent = this
-
                 };
                 frmRandevuRaporForm.Show();
             }
+        }
+
+        private void içeriAktarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Context = DataHelper.Import();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Dosya Bulunamadi " + ex.Message);
+            }
+        }
+
+        private void dışarıAktarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            DataHelper.Export(Context);
         }
     }
 }

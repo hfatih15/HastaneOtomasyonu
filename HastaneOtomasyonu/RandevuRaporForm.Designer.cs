@@ -40,7 +40,7 @@
             this.cmbDoktorlar.Name = "cmbDoktorlar";
             this.cmbDoktorlar.Size = new System.Drawing.Size(121, 24);
             this.cmbDoktorlar.TabIndex = 0;
-            this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cbmDoktorlar_SelectedIndexChanged);
+            this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cmbDoktorlar_SelectedIndexChanged);
             // 
             // dgvRandevu
             // 

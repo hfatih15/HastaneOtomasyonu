@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Hastane.Lib.Models
 {
-   public class Doktor:Kisi,IMaasAlabilir
+    public class Doktor : Kisi, IMaasAlabilir
     {
         public decimal Maas { get; set; }
         public Servis Servis { get; set; }

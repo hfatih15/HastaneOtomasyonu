@@ -15,15 +15,13 @@ namespace Hastane.Lib.Helpers
                 List<string> saatler = new List<string>();
                 for (int saat = 8; saat <= 16; saat++)
                 {
-                    if (saat==12)
-                    {
-                        continue;
-                    }
-                    for (int dakika = 0; dakika <=45; dakika+=15)
+                    if (saat == 12) continue;
+                    for (int dakika = 0; dakika <= 45; dakika += 15)
                     {
                         saatler.Add($"{saat:00}:{dakika:00}");
                     }
                 }
+
                 return saatler;
             }
         }

@@ -18,11 +18,12 @@ namespace HastaneOtomasyonu
         private void RandevuForm_Load(object sender, EventArgs e)
         {
             cmbServis.DataSource = Enum.GetNames(typeof(Servis));
-            lstHastalar.DataSource = Form1.context.Hastalar
+            lstHastalar.DataSource = Form1.Context.Hastalar
                 .OrderBy(x => x.Ad)
                 .ThenBy(x => x.Soyad)
                 .ToList();
         }
+
         private Hasta seciliHasta;
         private Servis seciliServis;
         private Doktor seciliDoktor;
@@ -30,17 +31,15 @@ namespace HastaneOtomasyonu
 
         private void lstHastalar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lstHastalar.SelectedItem == null)
-            {
-                return;
-            }
+            if (lstHastalar.SelectedItem == null) return;
             seciliHasta = lstHastalar.SelectedItem as Hasta;
             cmbServis.Visible = true;
         }
 
         private void txtAra_KeyUp(object sender, KeyEventArgs e)
         {
-            lstHastalar.DataSource = KisiHelpers.Ara<Hasta>(Form1.context.Hastalar, txtAra.Text);
+
+            lstHastalar.DataSource = KisiHelper.Ara<Hasta>(Form1.Context.Hastalar, txtAra.Text);
         }
 
         private void lstHastalar_KeyDown(object sender, KeyEventArgs e)
@@ -53,7 +52,7 @@ namespace HastaneOtomasyonu
         private void cmbServis_SelectedIndexChanged(object sender, EventArgs e)
         {
             seciliServis = (Servis)Enum.Parse(typeof(Servis), cmbServis.SelectedItem.ToString());
-            cmbDoktor.DataSource = Form1.context.Doktorlar
+            cmbDoktor.DataSource = Form1.Context.Doktorlar
                 .Where(x => x.Servis == seciliServis)
                 .ToList();
             cmbDoktor.Visible = true;
@@ -67,8 +66,6 @@ namespace HastaneOtomasyonu
             Renklendir();
             RandevulariDoldur();
         }
-
-
 
         private Color bosRenk = Color.MediumSpringGreen;
         private Color seciliRenk = Color.Tomato;
@@ -84,7 +81,7 @@ namespace HastaneOtomasyonu
                     Text = liste[i],
                     Name = "btn_" + i,
                     Font = new Font("Trebuchet MS", 11.25F, FontStyle.Bold, GraphicsUnit.Point, ((byte)(162))),
-                    Size = new Size(50, 50)
+                    Size = new Size(70, 50)
                 };
                 btn.Click += btnSaat_Click;
                 flpSaatler.Controls.Add(btn);
@@ -92,7 +89,7 @@ namespace HastaneOtomasyonu
         }
         private void RandevulariDoldur()
         {
-            var tumRandevular = Form1.context.Randevular.Where(x => x.Doktor.Id == seciliDoktor.Id);
+            var tumRandevular = Form1.Context.Randevular.Where(x => x.Doktor.Id == seciliDoktor.Id);
             foreach (var randevu in tumRandevular)
             {
                 Button kapatilacakButton = flpSaatler.Controls[randevu.Saat] as Button;
@@ -103,18 +100,16 @@ namespace HastaneOtomasyonu
         private void btnSaat_Click(object sender, EventArgs e)
         {
             seciliButon = sender as Button;
-            renklendir(seciliButon);
+            Renklendir(seciliButon);
             btnKaydet.Visible = true;
         }
 
-        private void renklendir(Button seciliButon)
+        private void Renklendir(Button seciliButon)
         {
             foreach (Button item in flpSaatler.Controls)
             {
                 if (item.Enabled)
-                {
                     item.BackColor = item == seciliButon ? seciliRenk : bosRenk;
-                }
             }
         }
         private void Renklendir()
@@ -125,22 +120,25 @@ namespace HastaneOtomasyonu
             }
         }
 
+
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             int saat = RandevuHelper.Saatler.IndexOf(seciliButon.Text);
-            var durum = Form1.context.Randevular
+            var durum = Form1.Context.Randevular
                 .FirstOrDefault(x => x.Hasta.Id == seciliHasta.Id && x.Saat == saat);
-            if (durum!=null)
+            if (durum != null)
             {
-                string mesaj = $"{seciliHasta}'da {durum.Doktor.Servis} serviste {durum.Doktor}'a randevusu vardır";
+                string mesaj =
+                    $"{seciliHasta} {seciliButon.Text}'da {durum.Doktor.Servis} servisde {durum.Doktor}'a randevusu bulunmaktadir";
                 MessageBox.Show(mesaj);
                 return;
             }
-            Form1.context.Randevular.Add(new Randevu()
+
+            Form1.Context.Randevular.Add(new Randevu()
             {
-                Doktor=seciliDoktor,
-                Hasta=seciliHasta,
-                Saat=saat
+                Doktor = seciliDoktor,
+                Hasta = seciliHasta,
+                Saat = saat
             });
             Renklendir();
             RandevulariDoldur();

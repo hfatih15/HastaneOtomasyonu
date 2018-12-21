@@ -38,9 +38,9 @@
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(622, 384);
+            this.btnKaydet.Location = new System.Drawing.Point(878, 316);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(75, 23);
+            this.btnKaydet.Size = new System.Drawing.Size(128, 84);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = true;
@@ -87,14 +87,14 @@
             // 
             this.flpSaatler.Location = new System.Drawing.Point(254, 54);
             this.flpSaatler.Name = "flpSaatler";
-            this.flpSaatler.Size = new System.Drawing.Size(492, 313);
+            this.flpSaatler.Size = new System.Drawing.Size(573, 547);
             this.flpSaatler.TabIndex = 5;
             // 
             // RandevuForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1153, 613);
             this.Controls.Add(this.flpSaatler);
             this.Controls.Add(this.cmbDoktor);
             this.Controls.Add(this.cmbServis);
