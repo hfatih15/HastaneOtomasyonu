@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cbmDoktorlar = new System.Windows.Forms.ComboBox();
+            this.cmbDoktorlar = new System.Windows.Forms.ComboBox();
             this.dgvRandevu = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRandevu)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbmDoktorlar
+            // cmbDoktorlar
             // 
-            this.cbmDoktorlar.FormattingEnabled = true;
-            this.cbmDoktorlar.Location = new System.Drawing.Point(73, 12);
-            this.cbmDoktorlar.Name = "cbmDoktorlar";
-            this.cbmDoktorlar.Size = new System.Drawing.Size(121, 24);
-            this.cbmDoktorlar.TabIndex = 0;
+            this.cmbDoktorlar.FormattingEnabled = true;
+            this.cmbDoktorlar.Location = new System.Drawing.Point(73, 48);
+            this.cmbDoktorlar.Name = "cmbDoktorlar";
+            this.cmbDoktorlar.Size = new System.Drawing.Size(121, 24);
+            this.cmbDoktorlar.TabIndex = 0;
+            this.cmbDoktorlar.SelectedIndexChanged += new System.EventHandler(this.cbmDoktorlar_SelectedIndexChanged);
             // 
             // dgvRandevu
             // 
@@ -55,9 +56,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgvRandevu);
-            this.Controls.Add(this.cbmDoktorlar);
+            this.Controls.Add(this.cmbDoktorlar);
             this.Name = "RandevuRaporForm";
             this.Text = "RandevuRaporForm";
+            this.Load += new System.EventHandler(this.RandevuRaporForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRandevu)).EndInit();
             this.ResumeLayout(false);
 
@@ -65,7 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cbmDoktorlar;
+        private System.Windows.Forms.ComboBox cmbDoktorlar;
         private System.Windows.Forms.DataGridView dgvRandevu;
     }
 }

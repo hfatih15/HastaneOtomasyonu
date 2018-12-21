@@ -1,13 +1,10 @@
-﻿using System;
+﻿using Hastane.Lib.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Hastane.Lib.Models;
 namespace Hastane.Lib.Helpers
 {
-   public static class FormHelper
+    public static class FormHelper
     {
         public static void FormuTemizle (Form form)
         {

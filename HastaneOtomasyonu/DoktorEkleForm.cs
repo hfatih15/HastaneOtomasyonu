@@ -45,21 +45,19 @@ namespace HastaneOtomasyonu
                 if (chlstHemsire.GetItemCheckState(i)==CheckState.Checked)
                 {
                     if (hms.AtandiMi)
-                    {
                         continue;
-                    }
-                    doktorBusiness.AtamaYap(dr, hms);
+                    
+                    doktorBusiness.AtamaYap(dr,hms);
                 }
                 else
                 {
                     if (!hms.AtandiMi)
-                    {
                         continue;
-                    }
+                    
                     doktorBusiness.Cikart(dr, hms);
                 }
             }
-            lstDoktorlar_SelectedIndexChanged(sender, e);
+           // lstDoktorlar_SelectedIndexChanged(sender, e);
         }
 
         private void lstDoktorlar_SelectedIndexChanged(object sender, EventArgs e)

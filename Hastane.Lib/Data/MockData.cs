@@ -8,7 +8,7 @@ namespace Hastane.Lib.Data
         public MockData()
         {
             context = new Context();
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 10; i++)
             {
                 context.Hastalar.Add(new Hasta()
                 {
@@ -20,7 +20,7 @@ namespace Hastane.Lib.Data
 
                 });
             }
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 10; i++)
             {
                 context.Doktorlar.Add(new Doktor()
                 {
@@ -34,7 +34,7 @@ namespace Hastane.Lib.Data
 
                 });
             }
-            for (int i = 0; i < 75; i++)
+            for (int i = 0; i < 10; i++)
             {
                 context.Hemsireler.Add(new Hemsire()
                 {
